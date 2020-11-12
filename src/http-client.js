@@ -191,7 +191,7 @@ const order = (privCall, payload = {}, url) => {
       : payload
 
   return (
-    checkParams('order', newPayload, ['symbol', 'side', 'quantity']) &&
+    checkParams('order', newPayload, ['symbol', 'side']) &&
     privCall(url, { type: 'LIMIT', ...newPayload }, 'POST')
   )
 }
